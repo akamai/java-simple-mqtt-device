@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,7 +45,7 @@ public class LoginResponse {
 				l = input.read(bytes);
 			}
 
-			String s = bos.toString();
+			String s = bos.toString(StandardCharsets.UTF_8);
 			return processor.process(s);
 		} catch (Exception e) {
 			return null;

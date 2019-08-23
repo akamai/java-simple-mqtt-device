@@ -1,5 +1,6 @@
 package com.akamai.iot.iec;
 
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -25,7 +26,7 @@ public class SimpleSubscriber {
 
 			@Override
 			public void messageArrived(String topic, MqttMessage message) throws Exception {
-				System.out.println("MESSAGE FROM "+topic+": '"+new String(message.getPayload())+"' qos: "+Integer.toString(message.getQos()));
+				System.out.println("MESSAGE FROM " + topic + ": '" + new String(message.getPayload(), StandardCharsets.UTF_8) + "' qos: " + Integer.toString(message.getQos()));
 			}
 
 			@Override

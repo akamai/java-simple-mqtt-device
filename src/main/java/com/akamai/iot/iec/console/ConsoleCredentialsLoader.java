@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
 
 import com.akamai.iot.iec.model.auth.Credentials;
@@ -59,7 +60,8 @@ public class ConsoleCredentialsLoader {
 	}
 
 	private static class _IDELoader extends ConsoleCredentialsLoader {
-		private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));;
+		private BufferedReader reader =
+				new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 
 		private _IDELoader() {
 			super(null);

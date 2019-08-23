@@ -1,5 +1,6 @@
 package com.akamai.iot.iec;
 
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -23,7 +24,7 @@ public class SimplePublisher {
 
 			@Override
 			public void messageArrived(String topic, MqttMessage message) throws Exception {
-				LOGGER.severe("UNEXPECTED MESSAGE FROM "+topic+": "+new String(message.getPayload())+" qos: "+Integer.toString(message.getQos()));
+				LOGGER.severe("UNEXPECTED MESSAGE FROM "+topic+": " + new String(message.getPayload(), StandardCharsets.UTF_8) + " qos: " + Integer.toString(message.getQos()));
 			}
 
 			@Override
@@ -89,7 +90,7 @@ public class SimplePublisher {
 			String line = r.readLine();
 			while (line != null) {
 				System.out.println("Publishing '"+line+"' to "+topic+" qos=1");
-				client.publish(topic, line.getBytes(), 1, false);
+				client.publish(topic, line.getBytes(StandardCharsets.UTF_8), 1, false);
 				line = r.readLine();
 			}
 

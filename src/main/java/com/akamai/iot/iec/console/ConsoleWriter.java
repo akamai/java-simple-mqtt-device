@@ -2,6 +2,7 @@ package com.akamai.iot.iec.console;
 
 import java.io.Console;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 
 public class ConsoleWriter {
 	private final PrintWriter writer = initializeWriter();
@@ -22,6 +23,6 @@ public class ConsoleWriter {
 
 	private PrintWriter initializeWriter() {
 		Console c = System.console();
-		return (c == null) ? new PrintWriter(System.out) : c.writer();
+		return (c == null) ? new PrintWriter(System.out, true, StandardCharsets.UTF_8) : c.writer();
 	}
 }
