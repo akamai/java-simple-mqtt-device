@@ -34,7 +34,7 @@ public class SimplePublisher {
 				LOGGER.severe("The connect has been lost, closing down");
 				System.exit(0);
 			}
-		};		
+		};
 
 		/*
 		 * Read the credentials from the console

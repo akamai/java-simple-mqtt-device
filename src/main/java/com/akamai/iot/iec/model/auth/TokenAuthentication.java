@@ -47,7 +47,7 @@ class TokenAuthentication implements Authentication {
 	        DateFormat formatter = DateFormat.getDateTimeInstance();
 	        b.append(formatter.format(this));
 		}
-		
+
 		return b.toString();
 	}
 

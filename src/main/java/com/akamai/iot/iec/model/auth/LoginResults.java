@@ -22,7 +22,7 @@ public class LoginResults {
 					if (error == null) {
 						return new LoginResults(responseCode, e);
 					}
-					
+
 					LoginResponse r = LoginResponse.parse(error, responseCode);
 					return new LoginResults(r, responseCode);
 				}
@@ -30,7 +30,7 @@ public class LoginResults {
 				LOGGER.log(Level.SEVERE, "exception reading response", t);
 			}
 		}
-		
+
 		LOGGER.info("Could not try and read response, passing along exception");
 		return new LoginResults(e);
 	}
@@ -41,7 +41,7 @@ public class LoginResults {
 		this.status = status;
 		this.error = null;
 	}
-	
+
 	LoginResults(int status, Throwable error) {
 		this.response = null;
 		this.error = error;

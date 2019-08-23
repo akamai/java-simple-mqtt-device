@@ -36,7 +36,7 @@ public class SimpleSubscriber {
 				LOGGER.severe("The connect has been lost, closing down");
 				System.exit(0);
 			}
-		};		
+		};
 
 
 		/*
@@ -60,7 +60,7 @@ public class SimpleSubscriber {
 
 		MqttClient client = null;
 
-		try {				
+		try {
 
 			client = sandbox.connect(a, true, callback);
 

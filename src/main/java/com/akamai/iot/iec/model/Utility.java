@@ -18,7 +18,7 @@ public class Utility {
 			System.err.println("Could not initialize logger - "+e.getMessage());
 		}
 	}
-	
+
 	public static ObjectMapper createObjectMapper() {
 		ObjectMapper om = new ObjectMapper();
 		om.registerModule(new JavaTimeModule());
@@ -26,7 +26,7 @@ public class Utility {
 		om.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
 		return om;
 	}
-	
+
 	public static void check(String message, String param) {
 		if (param == null || param.isEmpty())
 			throw new IllegalArgumentException(message+" cannot be empty");
@@ -44,7 +44,7 @@ public class Utility {
 	public static <T> void check(String message, T[] param) {
 		if (param == null || param.length == 0)
 			throw new IllegalArgumentException(message+" cannot be null");
-		
+
 		for (T t : param) {
 			if (t == null)
 				throw new IllegalArgumentException(message+" cannot contain null elements");

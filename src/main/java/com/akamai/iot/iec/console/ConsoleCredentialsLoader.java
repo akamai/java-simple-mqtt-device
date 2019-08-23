@@ -67,7 +67,7 @@ public class ConsoleCredentialsLoader {
 		}
 
 		@Override
-		public String readUsername() {			
+		public String readUsername() {
 			try {
 				System.out.print("Username: ");
 				return reader.readLine();
@@ -78,7 +78,7 @@ public class ConsoleCredentialsLoader {
 		}
 
 		@Override
-		public String readPassword() {			
+		public String readPassword() {
 			try {
 				System.out.print("Password: ");
 				return reader.readLine();

@@ -27,7 +27,7 @@ public class LoginResponse {
 	static LoginResponse parse(InputStream input) {
 		return parse(input, new JsonProcessor());
 	}
-	
+
 	static LoginResponse parse(InputStream input, int responseCode) {
 		return parse(input, new ErrorProcessor(responseCode));
 	}
@@ -53,23 +53,23 @@ public class LoginResponse {
 			catch (IOException e) { LOGGER.log(Level.SEVERE, "Could not close input", e); }
 		}
 	}
-	
+
 	private static class JsonProcessor {
-		
+
 		LoginResponse process(String responseString) throws IOException {
 			ObjectMapper om = Utility.createObjectMapper();
 			LoginResponse t = om.readValue(new StringReader(responseString), LoginResponse.class);
-			return t;			
+			return t;
 		}
 	}
-	
+
 	private static class ErrorProcessor extends JsonProcessor {
 		private final int responseCode;
-		
+
 		private ErrorProcessor(int responseCode) {
 			this.responseCode = responseCode;
 		}
-		
+
 		LoginResponse process(String responseString) throws IOException {
 			if (responseString == null)
 				return super.process(responseString);
@@ -83,7 +83,7 @@ public class LoginResponse {
 				b.append(s);
 				return new LoginResponse(null, b.toString());
 			}
-			
+
 			return super.process(responseString);
 		}
 	}
