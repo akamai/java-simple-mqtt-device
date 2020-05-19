@@ -1,33 +1,49 @@
 package com.akamai.iot.iec.model.auth;
 
-import java.time.Instant;
+/*-
+ * #%L
+ * java-simple-mqtt-device
+ * %%
+ * Copyright (C) 2020 Akamai Technologies, Inc.
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import java.time.Instant;
+
 @JsonInclude(Include.NON_NULL)
 public class LoginRequest {
-	public final String username;
-	public final String password;
-	public final String clientId;
+    public final String username;
+    public final String password;
+    public final String clientId;
 
-	public final Instant expiry;
+    public final Instant expiry;
 
-	public LoginRequest(String username, String password, String clientId) {
-		this(username, password, clientId, null);
-	}
+    public LoginRequest(String username, String password, String clientId, Instant expiry) {
+        this.username = username;
+        this.password = password;
+        this.clientId = clientId;
+        this.expiry = expiry;
+    }
 
-	public LoginRequest(String username, String password, String clientId, Instant expiry) {
-		this.username = username;
-		this.password = password;
-		this.clientId = clientId;
-		this.expiry = expiry;
-	}
-
-	public LoginRequest() { // for JSON
-		this.username = null;
-		this.password = null;
-		this.clientId = null;
-		this.expiry = null;
-	}
+    public LoginRequest() { // for JSON
+        this.username = null;
+        this.password = null;
+        this.clientId = null;
+        this.expiry = null;
+    }
 }
