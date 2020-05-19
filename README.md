@@ -34,7 +34,7 @@ There are two main files to run:
 Upon running, you will be prompted to provide `username` and `password` to your Sandbox. 
 Look for the details in the email received from [IoTDevelopers@akamai.com](mailto:IoTDevelopers@akamai.com), after requesting a Sandbox.
 
-Sample users and received in an email:
+Sample users received in an email:
 ```
 Device users: user_1, user1_2, user1_3, user1_4
 User's default password: secret
