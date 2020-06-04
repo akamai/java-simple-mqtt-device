@@ -1,4 +1,4 @@
-# Akamai Property Manager CLI
+# Java Simple MQTT device
 
 * [Overview](#overview)
 
