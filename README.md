@@ -43,5 +43,6 @@ User's default password: secret
 **Note:** Default password is the same for all the device users.
 
 # Notice
+Copyright © 2019-2020 Akamai Technologies, Inc.
 
 Your use of Akamai's products and services is subject to the terms and provisions outlined in [Akamai's legal policies](https://www.akamai.com/us/en/privacy-policies/).
